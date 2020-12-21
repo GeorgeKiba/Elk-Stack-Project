@@ -26,7 +26,6 @@ Load balancing ensures that the application will be highly redundant, in additio
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the log files and system metrics.
 
 The configuration details of each machine may be found below.
-_Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown_tables) to add/remove values from the table_.
 
 | Name              | Function | IP Address | Operating System |
 |-------------------|----------|------------|------------------|
@@ -39,8 +38,8 @@ _Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdow
 
 The machines on the internal network are not exposed to the public Internet. 
 
-Only the _____ machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
-- KibaSuperJumpbox
+Only the KibaSuperJumpbox machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
+
 
 Machines within the network can only be accessed by KibaSuperWeb-1 and KibaSuperWeb-2
 
