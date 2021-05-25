@@ -48,10 +48,10 @@ A summary of the access policies in place can be found in the table below.
 
 | Name     | Publicly Accessible | Allowed IP Addresses |
 |----------|---------------------|----------------------|
-| Jump Box | Yes/No              | 10.0.0.5 10.0.0.6    |
-|          |                     |                      |
-|          |                     |                      |
-
+| Jump Box |    Yes              | 127.0.0.1            |
+|  Web-1   |     No              | 10.0.0.4             |
+|  Web-2   |     No              | 10.0.0.4             |
+|  Elk2    |     No              | 10.0.0.4.            |
 ### Elk Configuration
 
 Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because automates away the drugery from daily tasks.
@@ -69,27 +69,53 @@ https://github.com/GeorgeKiba/Elk-Stack-Project/blob/adb3edc4cd7c7cd8cb60e6dfc84
 
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines:
-- 10.0.0.5 and 10.0.0.6
+- 10.0.0.5 (Web-1)
+- 10.0.0.6 (Web-2)
 
 We have installed the following Beats on these machines:
 - filebeats and metricbeats
 
 These Beats allow us to collect the following information from each machine:
-- _TODO: In 1-2 sentences, explain what kind of data each beat collects, and provide 1 example of what you expect to see. E.g., `Winlogbeat` collects Windows logs, which we use to track user logon events, etc._
+-Filebeat collects system log files, which we can use to see all events that have happened and are currently happening on a specified server or servers.
+
+Metricbeat collects host metrics used for monitoring performance, which we can use to track things such as memory usage and CPU.
 
 ### Using the Playbook
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
 
 SSH into the control node and follow the steps below:
-- Copy the _____ file to _____.
-- Update the _____ file to include...
-- Run the playbook, and navigate to ____ to check that the installation worked as expected.
+-Copy the playbook files to the Jump-Box-Provisioner VM.
+a sample of the hosts file:
+-Update the hosts file to include the private IP addresses of the DVWA servers as well as the private IP of the elkserver:
 
-_TODO: Answer the following questions to fill in the blanks:_
-- _Which file is the playbook? Where do you copy it?_
-- _Which file do you update to make Ansible run the playbook on a specific machine? How do I specify which machine to install the ELK server on versus which to install Filebeat on?_
-- _Which URL do you navigate to in order to check that the ELK server is running?
+# A collection of hosts belonging to the 'webservers' group
+[webservers]
+10.0.0.5 ansible_python_interpreter=/usr/bin/python3
+10.0.0.6 ansible_python_interpreter=/usr/bin/python3
+# A collection of hosts belonging to the 'elkservers' group
+[elkservers]
+10.2.0.4 ansible_python_interpreter=/usr/bin/python3
 
-_As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc.
-Download playbook - ansible-playbook (name of the playbook)
-upadate playbook  - nano (name of the playbook)
+Run the playbook, and navigate to Web-1 to check that the installation worked as expected. After that navigate to Web-2 followed by the ELK server to check that all installations worked as expected.
+
+
+You update the Ansible hosts file to run the playbook on specified machines. Within the Ansible hosts file you create two separate groups. One is called [webservers] and the other is called [elkservers]. You then place the private IP addresses of the corresponding servers underneath each group header. Then within the playbook files you specify whether the playbook should be applied to the webservers or elkservers group.
+
+Navigate to http://(ELK-Server public IP):5601/app/kibana in order to check that the ELK server is running
+
+Once connected to your jumpbox, make sure the ansible hosts file is up to date
+
+The specific commands the user will need to run to download the playbook:
+
+$ sudo su
+
+$ cd/etc/ansible
+
+$ ansible-playbook pentest.yml
+
+$ ansible-playbook install-elk.yml
+
+$ ansible-playbook filebeat-playbook.yml
+
+$ ansible-playbook metricbeat-playbook.yml
+
