@@ -85,8 +85,8 @@ In order to use the playbook, you will need to have an Ansible control node alre
 
 SSH into the control node and follow the steps below:
 -Copy the playbook files to the Jump-Box-Provisioner VM.
+-Update the hosts file to include the private IP addresses of the DVWA servers as well as the private IP of the elkserver
 a sample of the hosts file:
--Update the hosts file to include the private IP addresses of the DVWA servers as well as the private IP of the elkserver:
 
 # A collection of hosts belonging to the 'webservers' group
 [webservers]
@@ -95,6 +95,7 @@ a sample of the hosts file:
 # A collection of hosts belonging to the 'elkservers' group
 [elkservers]
 10.2.0.4 ansible_python_interpreter=/usr/bin/python3
+
 
 Run the playbook, and navigate to Web-1 to check that the installation worked as expected. After that navigate to Web-2 followed by the ELK server to check that all installations worked as expected.
 
