@@ -30,9 +30,9 @@ The configuration details of each machine may be found below.
 
 | Name              | Function | IP Address | Operating System |
 |-------------------|----------|------------|------------------|
-| KibaSuperJump Box | Gateway  | 10.0.0.4   | Linux            |
-| KibaSuperWeb-1    | Gateway  | 10.0.0.5   | Linux            |
-| KibaSuperWeb-2    | Gateway  | 10.0.0.6   | Linux            |
+| SuperJump Box | Gateway  | 10.0.0.4   | Linux            |
+| SuperWeb-1    | Gateway  | 10.0.0.5   | Linux            |
+| SuperWeb-2    | Gateway  | 10.0.0.6   | Linux            |
 | ElkServer         | Gateway  | 10.1.0.4   | Linux            |
 
 ### Access Policies
