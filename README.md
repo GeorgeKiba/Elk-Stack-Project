@@ -84,23 +84,32 @@ Metricbeat collects host metrics used for monitoring performance, which we can u
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
 
 SSH into the control node and follow the steps below:
+
 -Copy the playbook files to the Jump-Box-Provisioner VM.
+
 -Update the hosts file to include the private IP addresses of the DVWA servers as well as the private IP of the elkserver
+
 a sample of the hosts file:
 
 # A collection of hosts belonging to the 'webservers' group
 [webservers]
+
 10.0.0.5 ansible_python_interpreter=/usr/bin/python3
+
 10.0.0.6 ansible_python_interpreter=/usr/bin/python3
+
 # A collection of hosts belonging to the 'elkservers' group
 [elkservers]
+
 10.2.0.4 ansible_python_interpreter=/usr/bin/python3
 
 
 Run the playbook, and navigate to Web-1 to check that the installation worked as expected. After that navigate to Web-2 followed by the ELK server to check that all installations worked as expected.
 
 
-You update the Ansible hosts file to run the playbook on specified machines. Within the Ansible hosts file you create two separate groups. One is called [webservers] and the other is called [elkservers]. You then place the private IP addresses of the corresponding servers underneath each group header. Then within the playbook files you specify whether the playbook should be applied to the webservers or elkservers group.
+You update the Ansible hosts file to run the playbook on specified machines. Within the Ansible hosts file you create two separate groups. One is called 
+[webservers] and the other is called [elkservers]. You then place the private IP addresses of the corresponding servers underneath each group header. Then within
+the playbook files you specify whether the playbook should be applied to the webservers or elkservers group.
 
 Navigate to http://(ELK-Server public IP):5601/app/kibana in order to check that the ELK server is running
 
