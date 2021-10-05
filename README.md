@@ -31,9 +31,9 @@ The configuration details of each machine may be found below.
 | Name              | Function | IP Address | Operating System |
 |-------------------|----------|------------|------------------|
 | Jump Box | Gateway  | 10.0.0.4   | Linux            |
-| Web-1    | Gateway  | 10.0.0.5   | Linux            |
-| Web-2    | Gateway  | 10.0.0.6   | Linux            |
-| ElkServer         | Gateway  | 10.1.0.4   | Linux            |
+| Web-1    | DVWA site server  | 10.0.0.5   | Linux            |
+| Web-2    | DVWA site server | 10.0.0.6   | Linux            |
+| ElkServer         | ELK stack | 10.1.0.4   | Linux            |
 
 ### Access Policies
 
