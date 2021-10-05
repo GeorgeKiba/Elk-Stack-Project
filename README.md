@@ -2,7 +2,7 @@
 ## Automated ELK Stack Deployment
 
 The files in this repository were used to configure the network depicted below.
-
+https://viewer.diagrams.net/?tags=%7B%7D&highlight=0000ff&edit=_blank&layers=1&nav=1&title=Homework%2012#Uhttps%3A%2F%2Fdrive.google.com%2Fuc%3Fid%3D13snrnQ9V8wiJC6FsrnOQGox4SGf63gHK%26export%3Ddownload
 
 
 
