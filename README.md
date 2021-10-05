@@ -30,9 +30,9 @@ The configuration details of each machine may be found below.
 
 | Name              | Function | IP Address | Operating System |
 |-------------------|----------|------------|------------------|
-| Jump Box | Gateway  | 10.0.0.4   | Linux            |
-| Web-1    | DVWA site server  | 10.0.0.5   | Linux            |
-| Web-2    | DVWA site server | 10.0.0.6   | Linux            |
+| KibaSuperJump Box | Gateway  | 10.0.0.4   | Linux            |
+| KibaWeb-1    | DVWA site server  | 10.0.0.5   | Linux            |
+| KibaWeb-2    | DVWA site server | 10.0.0.6   | Linux            |
 | ElkServer         | ELK stack | 10.1.0.4   | Linux            |
 
 ### Access Policies
@@ -48,9 +48,9 @@ A summary of the access policies in place can be found in the table below.
 
 | Name     | Publicly Accessible | Allowed IP Addresses |
 |----------|---------------------|----------------------|
-| Jump Box |    Yes              | 127.0.0.1            |
-|  Web-1   |     No              | 10.0.0.5             |
-|  Web-2   |     No              | 10.0.0.6             |
+| KibaSuperJump Box |    Yes              | 127.0.0.1            |
+|  KibaWeb-1   |     No              | 10.0.0.5             |
+|  KibaWeb-2   |     No              | 10.0.0.6             |
 |  Elk2    |     No              | 10.0.0.4             |
 ### Elk Configuration
 
@@ -69,8 +69,8 @@ https://github.com/GeorgeKiba/Elk-Stack-Project/blob/adb3edc4cd7c7cd8cb60e6dfc84
 
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines:
-- 10.0.0.5 (Web-1)
-- 10.0.0.6 (Web-2)
+- 10.0.0.5 (KibaWeb-1)
+- 10.0.0.6 (KibaWeb-2)
 
 We have installed the following Beats on these machines:
 - filebeats and metricbeats
